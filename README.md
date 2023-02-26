@@ -1,6 +1,8 @@
 <h1 align="center">Hi 👋, I'm Usama Saeed</h1>
 <h3 align="center">A passionate Mobile Application Developer from Pakistan</h3>
 
+<img align="right" alt="coding" widht="400" src="https://cdn.dribbble.com/users/4382412/screenshots/15633275/media/085a014ebebde73e5cd510c93941f49a.gif">
+
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=usamasaeed010&label=Profile%20views&color=0e75b6&style=flat" alt="usamasaeed010" /> </p>
 
 - 🔭 I’m currently working on **Layajee Project**
