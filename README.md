@@ -5,9 +5,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=usamasaeed010&label=Profile%20views&color=0e75b6&style=flat" alt="usamasaeed010" /> </p>
 
-- 🔭 I’m currently working on **Android Java/kotlin.**
-
-- 🌱 I’m currently learning **Flutter**
+- 🔭 I’m currently working on **Android Java/kotlin, Flutter, Dart, Spring Boot.**
 
 - 👨‍💻 All of my projects are available at [https://github.com/usamasaeed010](https://github.com/usamasaeed010)
 
