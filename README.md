@@ -1,446 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usama Saeed - Mobile Developer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #0d1117;
-            color: #c9d1d9;
-            line-height: 1.6;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        header {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            padding: 20px 0;
-            border-bottom: 1px solid #30363d;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid #58a6ff;
-            object-fit: cover;
-        }
-        
-        .header-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-            color: #f0f6fc;
-        }
-        
-        .header-text h2 {
-            font-size: 1.5rem;
-            color: #58a6ff;
-            margin-bottom: 10px;
-        }
-        
-        .header-text p {
-            font-size: 1.1rem;
-            max-width: 600px;
-        }
-        
-        .badge {
-            display: inline-block;
-            background-color: #238636;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
-        
-        .stats {
-            display: flex;
-            gap: 20px;
-            margin-top: 10px;
-        }
-        
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        section {
-            background-color: #161b22;
-            border-radius: 10px;
-            padding: 25px;
-            border: 1px solid #30363d;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #f0f6fc;
-            border-bottom: 2px solid #58a6ff;
-            padding-bottom: 8px;
-            display: inline-block;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-category {
-            margin-bottom: 20px;
-        }
-        
-        .skill-category h4 {
-            color: #58a6ff;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .skill-item {
-            background-color: #21262d;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid #30363d;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        
-        .project-card {
-            background-color: #21262d;
-            border-radius: 10px;
-            padding: 20px;
-            border: 1px solid #30363d;
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: #58a6ff;
-        }
-        
-        .project-card h4 {
-            color: #58a6ff;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .project-card p {
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-        
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-        
-        .tech-tag {
-            background-color: #0d1117;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: #238636;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #2ea043;
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 1px solid #58a6ff;
-            color: #58a6ff;
-        }
-        
-        .btn-outline:hover {
-            background-color: rgba(88, 166, 255, 0.1);
-        }
-        
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #c9d1d9;
-            text-decoration: none;
-            padding: 10px 15px;
-            background-color: #21262d;
-            border-radius: 5px;
-            border: 1px solid #30363d;
-            transition: all 0.3s;
-        }
-        
-        .contact-link:hover {
-            background-color: #30363d;
-            border-color: #58a6ff;
-        }
-        
-        .contact-link i {
-            font-size: 1.2rem;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
-            border-top: 1px solid #30363d;
-            color: #8b949e;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .stats {
-                justify-content: center;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <img src="https://avatars.githubusercontent.com/u/12345678?v=4" alt="Profile Picture" class="profile-img">
-            <div class="header-text">
-                <h1>Usama Saeed</h1>
-                <h2>Mobile Application Developer</h2>
-                <p>Passionate Mobile Developer specializing in Flutter, Android (Java/Kotlin), and React Native. I build high-quality, performant, and user-friendly mobile applications.</p>
-                <span class="badge">Open to opportunities</span>
-                <div class="stats">
-                    <div class="stat-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Pakistan</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>usaeed000@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-        </header>
-        
-        <section>
-            <h3>Technical Skills</h3>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Mobile Development</h4>
-                    <div class="skill-items">
-                        <span class="skill-item">Flutter</span>
-                        <span class="skill-item">Dart</span>
-                        <span class="skill-item">Android</span>
-                        <span class="skill-item">Kotlin</span>
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">React Native</span>
-                        <span class="skill-item">iOS</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Backend Development</h4>
-                    <div class="skill-items">
-                        <span class="skill-item">Spring Boot</span>
-                        <span class="skill-item">REST APIs</span>
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Firebase</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Databases</h4>
-                    <div class="skill-items">
-                        <span class="skill-item">MySQL</span>
-                        <span class="skill-item">SQLite</span>
-                        <span class="skill-item">Firestore</span>
-                        <span class="skill-item">MongoDB</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Tools & Technologies</h4>
-                    <div class="skill-items">
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">Postman</span>
-                        <span class="skill-item">Android Studio</span>
-                        <span class="skill-item">VS Code</span>
-                        <span class="skill-item">Figma</span>
-                        <span class="skill-item">Adobe XD</span>
-                        <span class="skill-item">Photoshop</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h3>Featured Projects</h3>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h4>E-Commerce Flutter App</h4>
-                    <p>A complete e-commerce mobile application built with Flutter and Firebase with features like user authentication, product catalog, shopping cart, and payment integration.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Dart</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Stripe</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn">View Code</a>
-                        <a href="#" class="btn btn-outline">Live Demo</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <h4>Task Management Android App</h4>
-                    <p>Productivity application for task management with features like categories, priorities, reminders, and data synchronization across devices.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Kotlin</span>
-                        <span class="tech-tag">Room DB</span>
-                        <span class="tech-tag">MVVM</span>
-                        <span class="tech-tag">Coroutines</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn">View Code</a>
-                        <a href="#" class="btn btn-outline">Play Store</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <h4>Social Media React Native App</h4>
-                    <p>A cross-platform social media application with real-time messaging, post sharing, and user interaction features.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Socket.io</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn">View Code</a>
-                        <a href="#" class="btn btn-outline">Live Demo</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h3>Experience & Education</h3>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Professional Experience</h4>
-                    <div class="skill-items">
-                        <div class="skill-item" style="display: block; text-align: left; margin-bottom: 15px;">
-                            <strong>Mobile App Developer</strong><br>
-                            ABC Tech Solutions | 2021 - Present<br>
-                            Developed and maintained multiple Flutter and Android applications with 50k+ downloads.
-                        </div>
-                        <div class="skill-item" style="display: block; text-align: left;">
-                            <strong>Android Developer Intern</strong><br>
-                            XYZ Innovations | 2020 - 2021<br>
-                            Contributed to the development of enterprise Android applications using Java and Kotlin.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Education</h4>
-                    <div class="skill-items">
-                        <div class="skill-item" style="display: block; text-align: left;">
-                            <strong>Bachelor of Computer Science</strong><br>
-                            University of Punjab | 2017 - 2021<br>
-                            Graduated with honors, focusing on mobile development and software engineering.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h3>Get In Touch</h3>
-            <div class="contact-links">
-                <a href="https://github.com/usamasaeed010" class="contact-link">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/usama-saeed-61205b207" class="contact-link">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="https://web.facebook.com/profile.php?id=100006136846857" class="contact-link">
-                    <i class="fab fa-facebook"></i>
-                    <span>Facebook</span>
-                </a>
-                <a href="https://www.instagram.com/khan_sab_01" class="contact-link">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram</span>
-                </a>
-                <a href="mailto:usaeed000@gmail.com" class="contact-link">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email</span>
-                </a>
-            </div>
-        </section>
-        
-        <footer>
-            <p>&copy; 2023 Usama Saeed. All rights reserved.</p>
-            <p>Made with ❤️ using HTML & CSS</p>
-        </footer>
-    </div>
-</body>
-</html>
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--                  GITHUB PROFILE README                        -->
+<!--          Replace all YOUR_USERNAME / placeholders             -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<div align="center">
+
+<!-- Animated Typing Header -->
+<a href="https://github.com/YOUR_USERNAME">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&duration=3000&pause=800&color=58A6FF&center=true&vCenter=true&width=700&lines=Hey+there%2C+I'm+YOUR_NAME+%F0%9F%91%8B;Full-Stack+Developer+%F0%9F%9A%80;Open+Source+Enthusiast+%F0%9F%8C%9F;Always+Learning%2C+Always+Building+%F0%9F%94%A5" alt="Typing SVG" />
+</a>
+
+<br/>
+
+<!-- Social Badges Row -->
+<p>
+  <a href="https://linkedin.com/in/YOUR_LINKEDIN">
+    <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>&nbsp;
+  <a href="https://twitter.com/YOUR_TWITTER">
+    <img src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white" alt="Twitter"/>
+  </a>&nbsp;
+  <a href="mailto:YOUR_EMAIL@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
+  </a>&nbsp;
+  <a href="https://YOUR_PORTFOLIO.dev">
+    <img src="https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=firefox&logoColor=white" alt="Portfolio"/>
+  </a>&nbsp;
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Profile+Views&color=58a6ff&style=for-the-badge" alt="Profile Views"/>
+</p>
+
+</div>
+
+---
+
+## 🧬 About Me
+
+```yaml
+name:        YOUR_NAME
+location:    Your City, Country 🌍
+role:        Full-Stack Developer
+company:     YOUR_COMPANY / Freelance
+experience:  X+ Years
+focus:       Building scalable products & contributing to open source
+
+currently:
+  - 🔭 Working on   → [YOUR_PROJECT](https://github.com/YOUR_USERNAME/YOUR_PROJECT)
+  - 🌱 Learning     → Rust · Web3 · System Design
+  - 👯 Collaborate  → Open Source & SaaS Products
+  - 💬 Ask me about → JavaScript · Python · Cloud Architecture
+  - ⚡ Fun fact     → I debug with console.log and I'm not ashamed
+```
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+**Languages**
+
+![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![TypeScript](https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Rust](https://img.shields.io/badge/Rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
+![Go](https://img.shields.io/badge/Go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+
+**Frontend**
+
+![React](https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-black?style=for-the-badge&logo=three.js&logoColor=white)
+
+**Backend & Cloud**
+
+![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
+
+**Databases**
+
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+
+</div>
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&rank_icon=github" alt="GitHub Stats"/>
+<img width="49%" src="https://github-readme-streak-stats.herokuapp.com?user=YOUR_USERNAME&theme=github-dark-blue&hide_border=true&background=0d1117&ring=58a6ff&fire=ff6b6b&currStreakLabel=58a6ff" alt="GitHub Streak"/>
+
+<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&layout=compact&langs_count=8" alt="Top Languages"/>
+<img width="49%" src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=algolia&no-frame=true&no-bg=true&column=4&margin-w=4" alt="Trophies"/>
+
+</div>
+
+---
+
+## 🚀 Featured Projects
+
+<div align="center">
+
+<a href="https://github.com/YOUR_USERNAME/PROJECT_1">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=PROJECT_1&theme=github_dark&hide_border=true&bg_color=161b22&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9" />
+</a>
+<a href="https://github.com/YOUR_USERNAME/PROJECT_2">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=PROJECT_2&theme=github_dark&hide_border=true&bg_color=161b22&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9" />
+</a>
+
+<a href="https://github.com/YOUR_USERNAME/PROJECT_3">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=PROJECT_3&theme=github_dark&hide_border=true&bg_color=161b22&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9" />
+</a>
+<a href="https://github.com/YOUR_USERNAME/PROJECT_4">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=PROJECT_4&theme=github_dark&hide_border=true&bg_color=161b22&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9" />
+</a>
+
+</div>
+
+---
+
+## 📈 Contribution Graph
+
+<div align="center">
+
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&bg_color=0d1117&color=58a6ff&line=58a6ff&point=ffffff&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
+</div>
+
+---
+
+## 🐍 Contribution Snake
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-snake.svg" />
+</picture>
+
+> 💡 **To enable the snake animation**, go to your repo → Actions → create a workflow using [Platane/snk](https://github.com/Platane/snk). It auto-generates the snake SVG on every push.
+
+</div>
+
+---
+
+## 💡 Dev Quote of the Day
+
+<div align="center">
+
+[![Readme Quotes](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)](https://github.com/piyushsuthar/github-readme-quotes)
+
+</div>
+
+---
+
+## 🤝 Let's Connect
+
+<div align="center">
+
+<p>I'm always open to interesting conversations, collaboration, and new opportunities.</p>
+
+<a href="https://linkedin.com/in/YOUR_LINKEDIN">
+  <img src="https://img.shields.io/badge/Connect_on_LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>&nbsp;
+<a href="mailto:YOUR_EMAIL@gmail.com">
+  <img src="https://img.shields.io/badge/Drop_an_Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>&nbsp;
+<a href="https://YOUR_PORTFOLIO.dev">
+  <img src="https://img.shields.io/badge/Visit_Portfolio-%23000000.svg?style=for-the-badge&logo=About.me&logoColor=white"/>
+</a>
+
+<br/><br/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=58a6ff&height=100&section=footer&animation=fadeIn" width="100%"/>
+
+</div>
